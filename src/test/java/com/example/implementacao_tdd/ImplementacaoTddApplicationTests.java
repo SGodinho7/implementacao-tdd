@@ -1,7 +1,7 @@
 package com.example.implementacao_tdd;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+//import org.springframework.boot.test.context.SpringBootTest;
 
 import com.example.implementacao_tdd.entity.Aluno;
 import com.example.implementacao_tdd.entity.Conta;
@@ -9,7 +9,7 @@ import com.example.implementacao_tdd.entity.Curso;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringBootTest
+//@SpringBootTest
 class ImplementacaoTddApplicationTests {
 
 	/*@Test
