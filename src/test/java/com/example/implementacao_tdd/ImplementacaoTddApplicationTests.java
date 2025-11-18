@@ -2,6 +2,11 @@ package com.example.implementacao_tdd;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import com.example.implementacao_tdd.entity.Aluno;
+import com.example.implementacao_tdd.entity.Conta;
+import com.example.implementacao_tdd.entity.Curso;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
@@ -13,8 +18,8 @@ class ImplementacaoTddApplicationTests {
 	
 	@Test
 	void testAdicionaMoedaPremium() {
-		Aluno aluno = new Aluno();
-		Aluno aluno2 = new Aluno();
+		Aluno aluno = new Aluno(1, "Sergio");
+		Aluno aluno2 = new Aluno(2, "Guilherme");
 		Conta conta = new Conta();
 		Conta conta2 = new Conta();
 		Curso curso = new Curso("curso");
@@ -41,7 +46,7 @@ class ImplementacaoTddApplicationTests {
 	
 	@Test
 	void testConverteMoedasPremium() {
-		Aluno aluno = new Aluno();
+		Aluno aluno = new Aluno(1, "Sergio");
 		Conta conta = new Conta();
 		
 		aluno.setAssinaturaPremium();
@@ -55,7 +60,7 @@ class ImplementacaoTddApplicationTests {
 	
 	@Test
 	void testCompraCursoComMoedas() {
-		Aluno aluno = new Aluno();
+		Aluno aluno = new Aluno(1, "Sergio");
 		Conta conta = new Conta();
 		Curso curso = new Curso("curso");
 		
@@ -71,7 +76,7 @@ class ImplementacaoTddApplicationTests {
 	
 	@Test
 	void testMediaBaixaMoedaConta() {
-		Aluno aluno = new Aluno();
+		Aluno aluno = new Aluno(1, "Sergio");
 		Conta conta = new Conta();
 		Curso curso = new Curso("curso");
 		

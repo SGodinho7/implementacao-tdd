@@ -1,8 +1,19 @@
-package com.example.implementacao_tdd;
+package com.example.implementacao_tdd.entity;
 
 import java.util.ArrayList;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "contas")
 public class Conta {
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
 	private Aluno aluno;
 	private ArrayList<Curso> cursos;
 	private int saldo;
@@ -12,6 +23,18 @@ public class Conta {
 		this.cursos = new ArrayList<Curso>();
 		this.saldo = 0;
 		this.saldo_crypto = 0;
+	}
+	
+	public Long getId() {
+		return this.id;
+	}
+	
+	public Aluno getAluno() {
+		return this.aluno;
+	}
+	
+	public ArrayList<Curso> getCursos() {
+		return this.cursos;
 	}
 
 	public void setAluno(Aluno aluno) {

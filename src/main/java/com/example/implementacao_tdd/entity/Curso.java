@@ -1,6 +1,18 @@
-package com.example.implementacao_tdd;
+package com.example.implementacao_tdd.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "cursos")
 public class Curso {
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
 	private String titulo;
 	private float media;
 	private int custo;
@@ -11,6 +23,10 @@ public class Curso {
 		this.media = 0.0f;
 		this.custo = 0;
 		this.is_completed = false;
+	}
+	
+	public Long getId() {
+		return this.id;
 	}
 	
 	public String getTitulo() {
