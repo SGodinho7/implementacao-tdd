@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>ac2_project.example</groupId>
-	<artifactId>ac2_ca</artifactId>
+	<artifactId>implementacao_tdd</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ac2_ca</name>
 	<description>Demo project for Spring Boot</description>
