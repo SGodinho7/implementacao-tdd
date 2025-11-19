@@ -1,4 +1,4 @@
-FROM openjdk:17
+FROM openjdk:17-ea-22-jdk-buster
 
 # Set the working directory in the container
 WORKDIR /ac2_ca
