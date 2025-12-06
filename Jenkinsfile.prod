@@ -19,6 +19,7 @@ pipeline {
         bat "scp -o StrictHostKeyChecking=no -i \"~/Downloads/basic-ec2.pem\" docker-compose.prod.yml ubuntu@ec2-56-124-111-149.sa-east-1.compute.amazonaws.com:/home/ubuntu"
         bat "scp -o StrictHostKeyChecking=no ubuntu@ec2-56-124-111-149.sa-east-1.compute.amazonaws.com \"docker compose -f /home/ubuntu/docker-compose.prod.yml down\""
         bat "scp -o StrictHostKeyChecking=no ubuntu@ec2-56-124-111-149.sa-east-1.compute.amazonaws.com \"docker compose -f /home/ubuntu/docker-compose.prod.yml up -d\""
+        sleep time: 60, unit: 'SECONDS'
       }
     }
 
