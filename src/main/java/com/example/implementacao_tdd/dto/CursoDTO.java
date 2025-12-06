@@ -24,7 +24,7 @@ public class CursoDTO {
 		return this.id;
 	}
 	
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	
@@ -62,7 +62,10 @@ public class CursoDTO {
 	
 	public static CursoDTO fromEntity(Curso curso) {
 		CursoDTO dto = new CursoDTO();
-		dto.setId(curso.getId());
+		if(curso.getId() == null)
+			dto.setId(0L);
+		else
+			dto.setId(curso.getId());
 		dto.setTitulo(curso.getTitulo());
 		dto.setMedia(curso.getNota());
 		dto.setCusto(curso.getCusto());

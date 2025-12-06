@@ -1,5 +1,7 @@
 package com.example.implementacao_tdd.entity;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,7 +10,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "alunos")
-public class Aluno {
+public class Aluno implements Serializable {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +18,8 @@ public class Aluno {
 	
 	private String name;
 	private String assinatura;
+	
+	public Aluno() {}
 	
 	public Aluno(long id, String name) {
 		this.id = id;

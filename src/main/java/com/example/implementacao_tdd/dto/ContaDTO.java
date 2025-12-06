@@ -3,7 +3,6 @@ package com.example.implementacao_tdd.dto;
 import java.util.ArrayList;
 
 import com.example.implementacao_tdd.entity.Conta;
-import com.example.implementacao_tdd.entity.Curso;
 
 public class ContaDTO {
 
@@ -27,7 +26,7 @@ public class ContaDTO {
 		return this.id;
 	}
 	
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	
@@ -65,7 +64,10 @@ public class ContaDTO {
 	
 	public static ContaDTO fromEntity(Conta conta) {
 		ContaDTO dto = new ContaDTO();
-		dto.setId(conta.getId());
+		if(conta.getId() == null)
+			dto.setId(0L);
+		else
+			dto.setId(conta.getId());
 		dto.setAlunoId(conta.getAluno().getId());
 		dto.setSaldo(conta.getSaldo());
 		dto.setSaldoCrypto(conta.getSaldoCrypto());

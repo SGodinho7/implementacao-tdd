@@ -18,6 +18,8 @@ public class Curso {
 	private int custo;
 	private boolean is_completed;
 	
+	public Curso() {}
+	
 	public Curso(String titulo) {
 		this.titulo = titulo;
 		this.media = 0.0f;
