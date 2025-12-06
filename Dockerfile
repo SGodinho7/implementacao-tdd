@@ -7,7 +7,7 @@ WORKDIR /ac2_ca
 COPY target/*.jar /ac2_ca/ac2_ca-0.0.1-SNAPSHOT.jar
 
 # Expose the port that your application will run on
-EXPOSE 8585
+EXPOSE 8080
 
 # Specify the command to run on container start
-CMD ["java", "-jar", "ac2_ca-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "ac2_ca-0.0.1-SNAPSHOT.jar", "--server.port", "8080"]
