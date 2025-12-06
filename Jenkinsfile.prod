@@ -17,8 +17,8 @@ pipeline {
         bat 'docker-compose -f docker-compose.prod.yml logs' // Verifica os logs para conferir o status do Spring Boot
         bat 'docker-compose -f docker-compose.prod.yml ps' // Verifica o status do container*/
         bat "scp -o StrictHostKeyChecking=no -i \"~/Downloads/basic-ec2.pem\" docker-compose.prod.yml ubuntu@ec2-56-124-111-149.sa-east-1.compute.amazonaws.com:/home/ubuntu"
-        bat "scp -o StrictHostKeyChecking=no ubuntu@ec2-56-124-111-149.sa-east-1.compute.amazonaws.com \"docker compose -f /home/ubuntu/docker-compose.prod.yml down\""
-        bat "scp -o StrictHostKeyChecking=no ubuntu@ec2-56-124-111-149.sa-east-1.compute.amazonaws.com \"docker compose -f /home/ubuntu/docker-compose.prod.yml up -d\""
+        bat "ssh -o StrictHostKeyChecking=no ubuntu@ec2-56-124-111-149.sa-east-1.compute.amazonaws.com \"docker compose -f /home/ubuntu/docker-compose.prod.yml down\""
+        bat "ssh -o StrictHostKeyChecking=no ubuntu@ec2-56-124-111-149.sa-east-1.compute.amazonaws.com \"docker compose -f /home/ubuntu/docker-compose.prod.yml up -d\""
         sleep time: 60, unit: 'SECONDS'
       }
     }
